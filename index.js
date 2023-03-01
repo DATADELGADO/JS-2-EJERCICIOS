@@ -223,7 +223,7 @@ console.log("1 1 1 1 1\n2 1 2 4 8\n3 1 3 9 27\n4 1 4 16 64\n5 1 5 25 125");
 // 12
 console.log("-------------#12------------")
 let palabrita = 'You cannot end a sentence with because because because is a conjunction';
-console.log(palabrita.substring(palabrita.indexOf("because"),palabrita.lastIndexOf("because")));
+console.log(palabrita.substring(palabrita.indexOf("because"),palabrita.lastIndexOf("because")+7));
 
 
 /*
@@ -241,6 +241,10 @@ console.log(palabrita.substring(palabrita.indexOf("because"),palabrita.lastIndex
 4.  Calculate the total annual income of the person by extracting the numbers from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
 
 */
+console.log("");
+console.log("");
+console.log("");
+
 
 
 // 1
@@ -253,7 +257,6 @@ for(let i=0;i<array.length;i++){
         contador++;
     }
 }
-console.log(array);
 console.log(`la palabra 'love' se repite: ${contador} veces`);
 
 // 2
@@ -266,8 +269,7 @@ console.log(array2.length);
 console.log("-------------#3-------------")
 
 let sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching';
-let expresion1 = /[^a-zA-Z]/;
-//console.log(sentence.replaceAll(expresion1,""));
+//console.log(sentence.replaceAll(/^[a-zA-Z]+/,""));
 
 // 4
 console.log("-------------#4-------------")
