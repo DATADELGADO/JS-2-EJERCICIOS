@@ -262,7 +262,8 @@ console.log(`la palabra 'love' se repite: ${contador} veces`);
 // 2
 console.log("-------------#2-------------")
 let palabrita2 = 'You cannot end a sentence with because because because is a conjunction';
-let array2 = palabrita2.match("because");
+let array2 = palabrita2.match(/(because)+/);
+console.log(array2);
 console.log(array2.length);
 
 // 3
