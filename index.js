@@ -259,18 +259,43 @@ for(let i=0;i<array.length;i++){
 }
 console.log(`la palabra 'love' se repite: ${contador} veces`);
 
+// 1 version 2
+console.log("---------#1 version 2 ---------");
+let array_1 = oracion.toLowerCase().match(/love/g);
+console.log(array_1.length);
+
 // 2
 console.log("-------------#2-------------")
 let palabrita2 = 'You cannot end a sentence with because because because is a conjunction';
 let array2 = palabrita2.match(/because/g);
-console.log(array2);
 console.log(array2.length);
 
 // 3
 console.log("-------------#3-------------")
 
 let sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching';
-console.log(sentence.replaceAll(/[^a-zA-Z\s]/g,""));
+let sentence_format = sentence.replaceAll(/[^a-zA-Z\s]/g,"");
+console.log(sentence_format);
+let arraysito = sentence_format.toLowerCase().split(" ");
+let objetos = {};
+for(let i = 0; i< arraysito.length;i++){
+    if( objetos[arraysito[i]]){
+        objetos[arraysito[i]] += 1;
+    }else{
+        objetos[arraysito[i]] = 1;
+    }
+}
+let objetos_claves = Object.keys(objetos);
+let mayor = 0;
+for(let i=0; i<objetos_claves.length;i++){
+    if(objetos[objetos_claves[i]] > mayor){
+        mayor = objetos[objetos_claves[i]];
+    }if(objetos[objetos_claves[i]] < mayor){
+        delete objetos[objetos_claves[i]];
+    }
+}
+console.log(`la palabra o palabras que mas se repiten son: `);
+console.log(objetos);
 
 // 4
 console.log("-------------#4-------------")
@@ -285,6 +310,14 @@ for(let i=0;i<array3.length;i++){
     }
 }
 console.log(`los ingresos anuales totales son: ${(array4[0]+array4[2])*12 + array4[1]} euros`);
+
+// 4 version 2
+console.log("---------#4 version 2 ---------");
+
+let array5 = palabrita3.match(/[0-9]+/g);
+console.log(array5);
+console.log(`los ingresos anuales totales son: ${(parseInt(array5[0])+parseInt(array5[2]))*12 + parseInt(array5[1])} euros`);
+
 
 
 
